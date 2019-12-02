@@ -21,7 +21,7 @@ import com.training.pom.doneQuis;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class TC1Test {
+public class TC1_Simple_Test {
 
 	private WebDriver driver;
 	private String baseUrl;

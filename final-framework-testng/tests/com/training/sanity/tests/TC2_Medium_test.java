@@ -69,19 +69,21 @@ public class TC2_Medium_test {
 		// open the browser 
 		driver.get(baseUrl);
 		Assert.assertEquals("http://realestatem1.upskills.in/", baseUrl);
+		
+		loginPOM.clickLoginLink();
+		loginPOM.sendUserName("admin");
+		loginPOM.sendPassword("admin@123");
+		loginPOM.clickLoginBtn(); 
+		screenShot.captureScreenShot("First");
 	}
 		@Test
 		/*first TC*/
 		public void A_validLoginTest() throws InterruptedException {
-			loginPOM.clickLoginLink();
-			loginPOM.sendUserName("admin");
-			loginPOM.sendPassword("admin@123");
-			loginPOM.clickLoginBtn(); 
-			screenShot.captureScreenShot("First");
-			Thread.sleep(5000);
+			
+			
 			dashBoardPOM.clickPost();
 			dashBoardPOM.clickCategory();
-			dashBoardPOM.sendCategoryName("A1_New Launches");
+			dashBoardPOM.sendCategoryName("Z1_New Launches");
 			dashBoardPOM.sendCategorySlug("launch");
 			dashBoardPOM.sendCategoryDesc("New Launches of villas, apartments, flats");
 			dashBoardPOM.clickCategoryAdd();
@@ -98,7 +100,7 @@ public class TC2_Medium_test {
 		String str2 =	categoryNames.get(i).getText();
 		System.out.println(str2);
 		System.out.println(str2);
-		 if (str2.contentEquals("A1_New Launches")) {
+		 if (str2.contentEquals("Z1_New Launches")) {
 			
 			System.out.println("Category added successfully");
 			
@@ -126,20 +128,20 @@ public class TC2_Medium_test {
 				
 			String str1 =	categoryNamestwo.get(i).getText();
 			System.out.println(str1);
-			 if (str1.contentEquals("A1_New Launches")) {
+			 if (str1.contentEquals("Z1_New Launches")) {
 				
 				System.out.println("Category added successfully");
 				
 			}
 			}}
 	        
-		 dashBoardPOM.clickPost();
+	/*	 dashBoardPOM.clickPost();
 		 dashBoardPOM.clickNewPost();
 		 dashBoardPOM.postTitle.click();
 		 dashBoardPOM.sendPostTitle("New Launch_Reva");
 		 dashBoardPOM.sendPostBody(" New Launch in Home");
 		 dashBoardPOM.clickPostCategory();
-		 dashBoardPOM.clickPostPublish();
+		// dashBoardPOM.clickPostPublish();
 
 		 
 		 WebDriverWait wait = new WebDriverWait(driver,30);
@@ -157,7 +159,7 @@ public class TC2_Medium_test {
 		 
 		 
 		
-	        
+	        */
 	        }
 		
         

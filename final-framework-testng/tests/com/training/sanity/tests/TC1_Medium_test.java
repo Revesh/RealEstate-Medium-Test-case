@@ -28,7 +28,7 @@ import com.training.utility.DriverNames;
 
 public class TC1_Medium_test {
 
-	
+	/* first medium tc*/
 	
 	private WebDriver driver;
 	private String baseUrl;
@@ -64,15 +64,18 @@ public class TC1_Medium_test {
 		// open the browser 
 		driver.get(baseUrl);
 		Assert.assertEquals("http://realestatem1.upskills.in/", baseUrl);
+		
+		loginPOM.clickLoginLink();
+		loginPOM.sendUserName("admin");
+		loginPOM.sendPassword("admin@123");
+		loginPOM.clickLoginBtn(); 
+		screenShot.captureScreenShot("First");
 	}
 		@Test
 		/*first TC*/
 		public void A_validLoginTest() throws InterruptedException {
-			loginPOM.clickLoginLink();
-			loginPOM.sendUserName("admin");
-			loginPOM.sendPassword("admin@123");
-			loginPOM.clickLoginBtn(); 
-			screenShot.captureScreenShot("First");
+			
+		
 			Thread.sleep(5000);
 			dashBoardPOM.home.click();
 			blogPom.clickBlog();
